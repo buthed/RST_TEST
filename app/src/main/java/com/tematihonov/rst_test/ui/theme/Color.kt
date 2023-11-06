@@ -14,7 +14,7 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val ColorScheme.backgroundColor: Color @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFF191919) else Color(0xFF191919)
+    get() = if (!isSystemInDarkTheme()) Color(0xFFFFFFFF) else Color(0xFF191919)
 
 val ColorScheme.buttonTextColor: Color @Composable
 get() = if (!isSystemInDarkTheme()) Color(0xFFFFFFFF) else Color(0xFFFAFAFA)
@@ -36,4 +36,8 @@ get() = if (!isSystemInDarkTheme()) Color(0xFFFF645C) else Color(0xFFE54131)
 
 val ColorScheme.textGrayColor: Color @Composable
 get() = if (!isSystemInDarkTheme()) Color(0xFFA6A6A6) else Color(0xFFA6A6A6)
+
+val ColorScheme.indicatorGrayColor: Color @Composable
+get() = if (!isSystemInDarkTheme()) Color(0xFFB6B6B6) else Color(0xFF818181)
+
 

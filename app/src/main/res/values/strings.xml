@@ -1,3 +1,8 @@
-<resources>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Rst_test</string>
+    <string name="screen_main" >Главная</string>
+    <string name="screen_map">Карта</string>
+    <string name="screen_reserve">Бронь</string>
+    <string name="screen_chat">Чат</string>
+    <string name="screen_more">Ещё</string>
 </resources>
