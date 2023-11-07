@@ -1,4 +1,4 @@
-package com.tematihonov.rst_test
+package com.tematihonov.rst_test.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,11 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
+import com.tematihonov.rst_test.R
 import com.tematihonov.rst_test.navigation.BottomNavItem
 import com.tematihonov.rst_test.navigation.RstTestNavigation
 import com.tematihonov.rst_test.presentation.components.BottomNavigationBar
 import com.tematihonov.rst_test.ui.theme.Rst_testTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
