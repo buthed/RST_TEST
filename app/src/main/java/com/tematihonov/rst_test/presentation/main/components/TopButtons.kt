@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -22,28 +23,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.tematihonov.rst_test.R
+import com.tematihonov.rst_test.domain.models.responseMain.Button
 import com.tematihonov.rst_test.ui.spacing
 import com.tematihonov.rst_test.ui.theme.buttonTextColor
 
 @Composable
-fun TopButtons() {
-
+fun TopButtons(buttons: List<Button>) {
     LazyRow(
         Modifier.padding(start = MaterialTheme.spacing.medium),
         horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
-        items(1) {
-            Row(horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)) {
-                RstWeatherButton()
-                RstHelpButton()
-                RstMapButton()
+        items(buttons) {button ->
+            when (button.icon.take(8)) {
+                "rst-weat" -> RstWeatherButton(button)
+                "rst-help" -> RstHelpButton(button)
+                "rst-map_" -> RstMapButton(button)
             }
         }
     } //TODO recreate
 }
 
 @Composable
-fun RstWeatherButton() {
+fun RstWeatherButton(button: Button) {
     Box(
         Modifier
             .height(40.dp)
@@ -68,13 +69,13 @@ fun RstWeatherButton() {
                 painter = painterResource(id = R.drawable.weather), contentDescription = "",
                 modifier = Modifier.size(24.dp)
             )
-            Text(text = "+29 \u2103", color = MaterialTheme.colorScheme.buttonTextColor) //TODO add to string
+            Text(text = button.title, color = MaterialTheme.colorScheme.buttonTextColor)
         }
     }
 }
 
 @Composable
-fun RstHelpButton() {
+fun RstHelpButton(button: Button) {
     Box(
         Modifier
             .height(40.dp)
@@ -99,13 +100,13 @@ fun RstHelpButton() {
                 painter = painterResource(id = R.drawable.about_base), contentDescription = "",
                 modifier = Modifier.size(24.dp)
             )
-            Text(text = "О базе отдыха", color = MaterialTheme.colorScheme.buttonTextColor) //TODO add to string
+            Text(text = button.title, color = MaterialTheme.colorScheme.buttonTextColor)
         }
     }
 }
 
 @Composable
-fun RstMapButton() {
+fun RstMapButton(button: Button) {
     Box(
         Modifier
             .height(40.dp)
@@ -130,7 +131,7 @@ fun RstMapButton() {
                 painter = painterResource(id = R.drawable.how_to_get), contentDescription = "",
                 modifier = Modifier.size(24.dp)
             )
-            Text(text = "Как добраться", color = MaterialTheme.colorScheme.buttonTextColor) //TODO add to string
+            Text(text = button.title, color = MaterialTheme.colorScheme.buttonTextColor)
         }
     }
 }
