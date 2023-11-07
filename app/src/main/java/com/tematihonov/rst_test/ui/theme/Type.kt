@@ -11,13 +11,13 @@ import com.tematihonov.rst_test.R
 // Set of Material typography styles to start with
 val Typography = Typography(
     titleLarge = TextStyle(
-        fontFamily = FontFamily(Font(R.font.roboto_regular)),
+        fontFamily = FontFamily(Font(R.font.roboto_medium)),
         fontWeight = FontWeight.Normal,
         fontSize = 24.sp,
         lineHeight = 28.8.sp,
     ),
     titleMedium = TextStyle(
-        fontFamily = FontFamily(Font(R.font.roboto_regular)),
+        fontFamily = FontFamily(Font(R.font.roboto_medium)),
         fontWeight = FontWeight.Normal,
         fontSize = 20.sp,
         lineHeight = 24.sp,
