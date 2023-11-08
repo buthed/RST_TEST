@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -31,16 +32,24 @@ import com.tematihonov.rst_test.ui.theme.buttonTextColor
 fun TopButtons(buttons: List<Button>) {
     LazyRow(
         Modifier.padding(start = MaterialTheme.spacing.medium),
-        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small)
     ) {
         items(buttons) {button ->
             when (button.icon.take(8)) {
-                "rst-weat" -> RstWeatherButton(button)
-                "rst-help" -> RstHelpButton(button)
-                "rst-map_" -> RstMapButton(button)
+                "rst-weat" -> {
+                    RstWeatherButton(button)
+                    Box(Modifier.width(MaterialTheme.spacing.small))
+                }
+                "rst-help" -> {
+                    RstHelpButton(button)
+                    Box(Modifier.width(MaterialTheme.spacing.small))
+                }
+                "rst-map_" -> {
+                    RstMapButton(button)
+                    Box(Modifier.width(MaterialTheme.spacing.small))
+                }
             }
         }
-    } //TODO recreate
+    }
 }
 
 @Composable

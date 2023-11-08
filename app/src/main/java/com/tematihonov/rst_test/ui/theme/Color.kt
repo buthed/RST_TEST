@@ -40,4 +40,7 @@ get() = if (!isSystemInDarkTheme()) Color(0xFFA6A6A6) else Color(0xFFA6A6A6)
 val ColorScheme.indicatorGrayColor: Color @Composable
 get() = if (!isSystemInDarkTheme()) Color(0xFFB6B6B6) else Color(0xFF818181)
 
+val ColorScheme.dividerColor: Color @Composable
+get() = if (!isSystemInDarkTheme()) Color(0xFFF5F5F5) else Color(0xFF333333)
+
 
