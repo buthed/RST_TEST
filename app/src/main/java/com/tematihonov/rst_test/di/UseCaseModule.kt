@@ -21,7 +21,6 @@ object UseCaseModule {
         return repository
     }
 
-
     @Singleton
     @Provides
     fun provideNetworkUseCases(networkRepository: NetworkRepository): NetworkUseCase {
@@ -30,5 +29,4 @@ object UseCaseModule {
             getBlogUseCase = GetBlogUseCase(networkRepository)
         )
     }
-
 }

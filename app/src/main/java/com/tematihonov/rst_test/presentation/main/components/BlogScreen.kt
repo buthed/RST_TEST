@@ -31,7 +31,9 @@ import com.tematihonov.rst_test.ui.theme.textColor
 
 @Composable
 fun BlogScreen(viewModel: MainViewModel) {
+
     val selectedBlog = viewModel.selectedBlog
+
     if (selectedBlog != null) {
         Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.backgroundColor)) {
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.TopStart) {

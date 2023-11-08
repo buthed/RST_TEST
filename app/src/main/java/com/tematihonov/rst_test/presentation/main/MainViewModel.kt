@@ -45,7 +45,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun getMain() {
+    private fun getMain() {
         viewModelScope.launch {
             networkUseCase.getMainUseCase.invoke().onStart {
                 response.value = ApiState.Loading
